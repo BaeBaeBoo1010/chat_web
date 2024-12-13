@@ -1,0 +1,82 @@
+/* General message styles */
+li {
+    margin: 10px 0; /* Adds vertical spacing between messages */
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 60%;
+    word-wrap: break-word;
+    list-style: none; /* Removes the default list bullet point */
+}
+
+/* Blue bubble for self messages */
+li.self {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto; /* Pushes the bubble to the right */
+    margin-right: 10px; /* Add space from the edge of the screen */
+}
+
+/* Gray bubble for other messages */
+li.other {
+    background-color: #e9ecef;
+    color: black;
+    align-self: flex-start;
+    margin-left: 10px; /* Add space from the edge of the screen */
+    margin-right: auto; /* Pushes the bubble to the left */
+}
+
+/* Add hover zoom effect for message bubbles */
+li.self, li.other {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: inline-block;
+}
+
+/* Slight zoom effect when hovering over messages */
+li.self:hover, li.other:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Container for the messages */
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between messages */
+    padding: 10px;
+    overflow-y: auto; /* Ensures messages scroll properly if overflowing */
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+}
+
+/* Keyframes for gradient transition */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Add hover zoom effect for message bubbles */
+#send {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: inline-block;
+}
+
+/* Slight zoom effect when hovering over messages */
+#send:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
